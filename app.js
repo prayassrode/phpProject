@@ -30,15 +30,8 @@ app.controller("zerionController", ['$scope', '$http', function($scope, $http){
 		return pattern.test(str);
 	}
 
-	function checkDate(dateString) {
-		var date = new Date(dateString);
-		console.log(date);
-	}
 
 	$scope.iForm = function() {
-
-		checkDate($scope.formData.date_today);
-
 		var phonePattern = new RegExp(/^(\()\d{3}(\))(\s)\d{3}(-)\d{4}$/);
 		var ssnPattern = new RegExp(/\d{3}(-)\d{2}(-)\d{4}$/);
 		var zipPattern = new RegExp(/\d{5}$/);
