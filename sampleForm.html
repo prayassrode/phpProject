@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+</style>
+</head>
+<body ng-app="zerion" ng-controller="zerionController">
+
+
+<!-- <span ng-show="success">Data Successflly Posted!!!</span> -->
+
+<div class="container">
+  <h3>Contact Form</h3>
+  <form name="sampleForm" id="sampleForm" ng-submit="iForm()">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" ng-model="formData.first_name" placeholder="Your name.." required>
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" ng-model="formData.last_name" placeholder="Your last name.." required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" ng-model="formData.email" placeholder="Your email Address.." required>
+    <span ng-show="sampleForm.email.$required">This field is required.</span>
+
+    <br>
+    <br>
+
+    <label for="age">Age</label>
+    <input type="text" id="age" name="age" ng-model="formData.age" placeholder="Your age.." required>
+
+    <label for="school">School</label>
+    <input type="text" id="school" name="school" ng-model="formData.school" maxlength="30" placeholder="Your school name.." required>
+
+    <label for="graduationYear">Gradauation Year</label>
+    <input type="number" id="graduationYear" name="graduationYear" ng-model="formData.graduation_year" placeholder="Graduation Year.." min="1960" max="2022" required><br><br>
+
+    <label for="major">Major</label>
+    <input type="text" id="major" name="major" ng-model="formData.major" maxlength="30" placeholder="Your major.." required>
+
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" name="phone" ng-model="formData.phone" placeholder="(xxx) xxx-xxxx" required>
+
+    <label for="ssn">SSN</label>
+    <input type="text" id="ssn" name="ssn" ng-model="formData.ssn" placeholder="xxx-xx-xxxx" required>
+
+    <label for="zip">zip code</label>
+    <input type="number" id="zip" name="zip" ng-model="formData.zip_code" placeholder="xxxxx" required><br><br>
+
+    <label for="date">Pick Date</label>
+    <input type="text" date='yyyy-mm-dd' id="date" name="date" ng-model="formData.date_today" placeholder="yyyy-mm-dd" required>
+ 
+    <br>
+    <br>
+
+
+<!--
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+-->
+    <input type="submit" value="Submit" form="sampleForm">
+  </form>
+</div>
+
+</body>
+</html>
